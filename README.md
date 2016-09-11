@@ -37,26 +37,31 @@ If it will be proposed to chose the Angular version -- select answer ? __4__
 
 ## Using:
 
-During first server run will be created created table "pupils" with columns: pupil_id, name, password and grade:
+During first server run will be created table "pupils" with columns: pupil_id, name, password and grade:
 
-1 Valik 12345 4
+1  Valik  12345  4
 
-2 Vasia 23456 3
+2  Vasia  23456  3
 
-3 Vania 34567 3
+3  Vania  34567  3
+
 
 Use them to login
 
 (field grade influence on complexity of the generated problems)
 
-After login you can select needed problems type in Settings tab and use the main app functionality in Task tab.
+After login you can select needed problems type in "Settings" tab and use the main app functionality in "Task" tab.
 
-All answers are visualised in table below the generated problem and correct/incorrect answers counter.
+Correct/incorrect answers counters are on the right of generated problem.
+
+All answers are visualised in table below the generated problem.
 
 The same time each answer is saved in "problems" table in DB (in case of first answer this table creates).
 
 After that you can logout (all cookies and local storage data is removes).
 
-During next login you will see all your previous result (with answers counters and all answers).
+During next login you will see all your previous results (with answer counters and all answers).
 
-The data which is stored in linked "pupils" and "problems" tables will be enough to procure all indicated in task SQL queries.
+Table "problems" is linked with table "pupils" by pupil_id field.
+
+The data which is stored in tables will be enough to procure all indicated in task SQL queries.
