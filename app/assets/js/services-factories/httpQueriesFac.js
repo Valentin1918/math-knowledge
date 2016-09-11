@@ -22,11 +22,8 @@ app.factory('httpPostQuery', ['$q', '$http', function($q, $http) {
             var delay = $q.defer();
             $http.post(url, sendData)
                 .success(function(data) {
-                    console.log('success');
                     delay.resolve(data);
                 }).error( function(data) {
-                    console.log('failure');
-                    console.log(data);
                     delay.reject('Unable to fetch the item' + data);
                 });
             return delay.promise;
