@@ -1,0 +1,29 @@
+{
+  "name": "math_knowledge",
+  "version": "1.0.0",
+  "author": "Grekulov Valentyn",
+  "description": "Math knowledge project made on NodeJS, AngularJS and Bootstrap",
+  "keywords": [
+    "NodeJS",
+    "AngularJS",
+    "Bootstrap",
+    "Math"
+  ],
+  "license": "ISC",
+  "homepage": "http://ua.linkedin.com/pub/valentyn-grekulov/62/334/47",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "dependencies": {
+    "angular": "~1.5.7",
+    "angular-bootstrap": "~1.2.1",
+    "angular-cookies": "~1.5.0",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.2",
+    "font-awesome": "~4.5.0",
+    "oclazyload": "~0.6.3"
+  }
+}

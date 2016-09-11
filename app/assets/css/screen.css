@@ -1,0 +1,200 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+.hide {
+  display: none; }
+
+.navbar-custom {
+  height: 40px;
+  padding: 4px 15px 4px 50px;
+  border-radius: 0; }
+
+.navbar-brand-custom {
+  cursor: pointer;
+  padding: 8px 0 0 60px; }
+
+a {
+  cursor: pointer; }
+
+.nav > li > a {
+  text-transform: uppercase; }
+  .nav > li > a:hover {
+    background-color: transparent; }
+
+/* ---------------------------------------------------------------------- */
+/*  Horizontal Menu
+/* ---------------------------------------------------------------------- */
+.menu-mobile-toggler {
+  position: absolute;
+  z-index: 25;
+  right: 24px;
+  top: 8px;
+  outline: none; }
+
+.menu-wrapper {
+  width: 100%;
+  height: 78px;
+  background-color: #434753;
+  float: left;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle; }
+
+.navbar-nav {
+  display: inline-block;
+  float: none;
+  transform: translateY(50%); }
+  .navbar-nav > li > a {
+    color: white;
+    -moz-transition: color 250ms linear;
+    -o-transition: color 250ms linear;
+    -webkit-transition: color 250ms linear;
+    transition: color 250ms linear;
+    padding: 10px 50px; }
+    .navbar-nav > li > a:hover {
+      color: #777879;
+      text-decoration: none;
+      -moz-transition: color 0ms linear;
+      -o-transition: color 0ms linear;
+      -webkit-transition: color 0ms linear;
+      transition: color 0ms linear; }
+
+/* ---------------------------------------------------------------------- */
+/*  Footer
+/* ---------------------------------------------------------------------- */
+.footer-copyright {
+  float: left;
+  color: #999;
+  line-height: 1.66667;
+  font-size: 12px;
+  z-index: 999;
+  padding: 3px 0 3px 50px;
+  width: 100%; }
+  .footer-copyright a {
+    color: #999; }
+    .footer-copyright a:hover {
+      text-decoration: none;
+      color: #333; }
+
+/* ---------------------------------------------------------------------- */
+/*  Main Content
+/* ---------------------------------------------------------------------- */
+.home-page {
+  padding-left: 35px; }
+  .home-page .login-section {
+    text-align: left;
+    padding: 10px 0 20px;
+    background: #ffffff;
+    color: #434753; }
+    .home-page .login-section span {
+      font-size: 20px; }
+  .home-page .reply-form .form-group {
+    display: inline-block; }
+  .home-page .reply-form .input-icon {
+    /* firefox 19+ */
+    /* ie */ }
+    .home-page .reply-form .input-icon ::-webkit-input-placeholder {
+      font-size: 17px; }
+    .home-page .reply-form .input-icon ::-moz-placeholder {
+      font-size: 17px; }
+    .home-page .reply-form .input-icon :-ms-input-placeholder {
+      font-size: 17px; }
+    .home-page .reply-form .input-icon input {
+      padding: 6px 12px !important;
+      font-size: 17px; }
+    .home-page .reply-form .input-icon .form-control {
+      height: 36px; }
+  .home-page .reply-form button {
+    margin-bottom: 5px; }
+  .home-page .reply-form .problem {
+    font-size: 17px;
+    font-weight: bold; }
+
+/*-------------------------------Form-------------------------------------*/
+.app-form-section {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+  padding: 20px !important; }
+  .app-form-section .answers-number {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 5px; }
+    .app-form-section .answers-number .correct-answers {
+      color: green; }
+    .app-form-section .answers-number .incorrect-answers {
+      color: red; }
+
+.form-section {
+  text-align: left;
+  padding: 10px 0 20px;
+  background: #ffffff;
+  color: #434753; }
+  .form-section .form-group {
+    display: block; }
+
+span.input-icon {
+  display: block;
+  position: relative; }
+
+.input-icon > input {
+  padding-left: 40px !important;
+  padding-right: 10px !important;
+  font-size: 20px; }
+
+.wide-icon > input {
+  padding-left: 43px !important; }
+
+.input-icon > .form-control {
+  height: 42px; }
+
+.input-icon > [class*="fa-"] {
+  bottom: 0;
+  display: inline-block;
+  left: 10px;
+  color: #4cb1cb;
+  line-height: 42px;
+  padding: 0 3px;
+  position: absolute;
+  top: -1px;
+  z-index: 0;
+  font-size: 24px; }
+
+@media screen and (max-width: 1200px) and (min-width: 1000px) {
+  .input-icon > input {
+    font-size: 18px; } }
+
+@media screen and (max-width: 600px) and (min-width: 0px) {
+  .input-icon > input {
+    font-size: 18px; } }
+
+@media screen and (max-width: 600px) and (min-width: 0px) {
+  .top-section {
+    margin-top: 30px; } }
+
+p.terms {
+  font-size: 12px;
+  line-height: 1.8em;
+  color: #747c83; }
+  p.terms a {
+    color: #747c83;
+    text-decoration: underline; }
+    p.terms a:hover {
+      color: #fff; }
+
+.has-error .form-control {
+  border: 3px solid #f42156; }
+  .has-error .form-control:focus {
+    border: 3px solid #f42156; }
+
+.inside-content {
+  margin-bottom: 10px; }
+  .inside-content h4 {
+    color: #777a85;
+    margin-bottom: 2px; }
+  .inside-content span {
+    color: #d4d4d4; }

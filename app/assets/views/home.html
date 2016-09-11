@@ -1,0 +1,107 @@
+<div ng-controller="HomePage as home" class="home-page">
+<!-- Login form -->
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-9 col-xs-12">
+            <section class="form-section" ng-show="!home.user.logged">
+                <form name="Login" novalidate>
+                    <div uib-alert ng-repeat="alert in home.alerts" class="alert alert-danger" dismiss-on-timeout="5000" close="home.closeAlert($index)">{{alert.msg}}</div>
+                    <div class="form-group" ng-class="{'has-error':Login.name.$dirty && Login.name.$invalid, 'has-success':Login.name.$valid}">
+                         <span class="input-icon">
+                             <input ng-model="home.user.name" type="text" name="name" class="form-control" placeholder="Your Name" ng-pattern="/^([A-Za-z'-\s]{2,})$/" required>
+                             <i class="fa fa-user"></i>
+                         </span>
+                         <span class="error text-small block" ng-if="Login.name.$dirty && Login.name.$invalid">Name is required</span>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error':Login.password.$dirty && Login.password.$invalid, 'has-success':Login.password.$valid}">
+                         <span class="input-icon">
+                             <input ng-model="home.user.password" type="password" name="password" class="form-control" placeholder="Password" ng-pattern="/^(\d{4,6})$/" required>
+                             <i class="fa fa-key"></i>
+                         </span>
+                         <span class="error text-small block" ng-if="Login.password.$dirty && Login.password.$invalid">Incorrect password format</span>
+                    </div>
+                    <button class="btn btn-info" ng-click="home.userLogIn(Login)">Log in</button>
+                </form>
+            </section>
+        </div>
+    </div>
+<!--Greeting block-->
+    <section class="login-section" ng-show="home.user.logged">
+        <p>
+            <span>Hello {{home.user.name}}</span>
+        </p>
+        <button class="btn btn-warning" ng-click="home.userLogOut(Login)">Log out</button>
+    </section>
+<!--Main block-->
+    <uib-tabset active="active" ng-show="home.user.logged">
+        <!--Task tab-->
+        <uib-tab index="0" heading="Task">
+            <uib-tab-heading>
+                <i class="fa fa-mortar-board"></i> Task
+            </uib-tab-heading>
+            <!--Problem section-->
+            <section class="form-section app-form-section">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <form name="Reply" class="reply-form" novalidate>
+                            <span class="problem">
+                                {{home.currentProblem.number1}} {{home.currentProblem.symbol}} {{home.currentProblem.number2}} =
+                            </span>
+                            <div class="form-group" ng-class="{'has-error':Reply.answer.$dirty && Reply.answer.$invalid, 'has-success':Reply.answer.$valid}">
+                            <span class="input-icon">
+                                <input ng-model="home.userCurrentAns" type="text" name="answer" class="form-control" placeholder="answer" ng-pattern="/^(\d+)$/" required>
+                            </span>
+                            </div>
+                            <button class="btn btn-success" ng-click="home.reply(Reply)">Reply</button>
+                            <span class="error text-small block" ng-if="Reply.answer.$dirty && Reply.answer.$invalid">Reply need to be an integer</span>
+                        </form>
+                    </div>
+                    <!--Problems summary-->
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 answers-number">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 correct-answers">
+                                <span>Correct answers: {{home.user.correctAnsN}}</span>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 incorrect-answers">
+                                <span>Incorrect answers: {{home.user.incorrectAnsN}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Passed problems list-->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Problem</th>
+                    <th>Correct answer</th>
+                    <th>Pupil answer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="problem in home.user.problems track by $index" ng-class="{'success':problem.successAns, 'danger':!problem.successAns }">
+                    <td>{{problem.number1}} {{problem.symbol}} {{problem.number2}} = </td>
+                    <td>{{problem.correctAns}}</td>
+                    <td>{{problem.userAns}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </uib-tab>
+        <!--Settings tab-->
+        <uib-tab index="1" heading="Settings">
+            <uib-tab-heading>
+                <i class="fa fa-gears"></i> Settings
+            </uib-tab-heading>
+            <section class="form-section">
+                <form name="Form" novalidate>
+                    <div class="checkbox" ng-repeat="problem in home.acceptableProblems">
+                        <label>
+                            <input type="checkbox" ng-model="problem.selected" ng-change="home.updateSelectedProblems()" ng-disabled="problem.disabled">
+                            {{problem.name}}
+                        </label>
+                    </div>
+                </form>
+            </section>
+        </uib-tab>
+    </uib-tabset>
+
+</div>
